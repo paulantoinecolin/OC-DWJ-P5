@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/css/app.css" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
     <title>Document</title>
 </head>
-<body class="bg-gray-100 px-10">
+<body class="px-10">
     <header>
-        <nav class="menu flex justify-between items-stretch">
+        <nav class="menu flex justify-between items-stretch shadow">
             <div class="px-8">
                 <img class="h-40" src="/images/logo-efa.jpg" alt="logo-efa">
             </div>
-            <ol class="flex justify-between items-stretch py-20">
-                <li class="active item"><a href="#">Accueil</a></li>
-                <li class="item"><a href="#">Clubs enfants</a></li>
-                <li class="item">Evenements</li>
-                <li class="item">Contact</li>
+            <ol class="flex justify-between items-stretch py-10">
+                <li class="m-3 font-bold text-lg uppercase active item"><a href="#">Accueil</a></li>
+                <li class="m-3 font-bold text-lg uppercase item"><a href="#">Clubs enfants</a></li>
+                <li class="m-3 font-bold text-lg uppercase item">Evenements</li>
+                <li class="m-3 font-bold text-lg uppercase item">Contact</li>
             </ol>
             <img class="h-10" src="/images/logo-facebook.jpg" alt="facebook-icon">
             <img class="h-10" src="/images/logo-lang.png" alt="switch-lang">
@@ -72,17 +74,69 @@
             </section>
     </div>
     
-    <section>
-        <h2>Nous Contacter</h2>
-        <form action=""></form>
-        <div id="map"></div>
+    <section class="flex justify-center py-10">
+        <form action="">
+        <h2 class="text-2xl font-bold">Nous Contacter</h2>
+          <div class="mt-8 max-w-md">
+            <div class="grid grid-cols-1 gap-6">
+              <label class="block">
+                <span class="text-gray-700">Nom / Prénom</span>
+                <input
+                  type="text"
+                  class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  placeholder=""
+                />
+              </label>
+              <label class="block">
+                <span class="text-gray-700">E-Mail</span>
+                <input
+                  type="email"
+                  class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  placeholder="john@example.com"
+                />
+              </label>
+              <label class="block">
+                <span class="text-gray-700">Votre Message</span>
+                <textarea
+                  class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                  rows="3"
+                ></textarea>
+              </label>
+              <div class="block">
+                <div class="mt-2">
+                  <div>
+                    <label class="inline-flex items-center">
+                      <input
+                        type="checkbox"
+                        class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"
+                      />
+                      <span class="ml-2">Inscrivez-vous moi à la Newsletter</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div id="map" style="width: 400px; height:300px;" class="rounded-lg m-10"></div>
     </section>
 
-    <footer class="py-10">
-        <address>Présidente : Stephanie Zillmer
-            07 51 89 89 89
-            contact@efa-34.org</address>
-        <p>© 2020 EFA – Eveil Franco Allemand</p>
+    <footer class="p-10 bg-gray-200 rounded-lg">
+        <address>Présidente : Stephanie Zillmer <br>
+            07 51 89 89 89 <br>
+            contact@efa-34.org
+        </address>
+        <p>© {{ now()->year }} EFA – Eveil Franco Allemand</p>
     </footer>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bGFudG9pbmVjb2xpbiIsImEiOiJjazBqYmdiYWIwOGFjM2huMTR0enVpejk1In0.DmB49AgRVNtdlx9L_HKZlQ';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [3.890981, 43.596478], // starting position [lng, lat]
+        zoom: 16 // starting zoom
+        });
+        </script>
 </body>
 </html>
