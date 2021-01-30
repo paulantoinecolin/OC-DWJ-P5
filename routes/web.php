@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/fr');
 });
+
+Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
 
 Route::prefix('{lang?}')->middleware('locale')->group(function () {
     Route::get('/', function () {

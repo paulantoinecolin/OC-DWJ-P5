@@ -82,31 +82,27 @@
     <div class="contact mt-10 mb-6">
         <h2 class="text-xl font-bold  text-center uppercase tracking-wider">{{ __('contact-title') }}</h2>
         <section class="flex justify-center space-x-40 py-10">
-            <form action="" class="rounded-lg shadow-lg px-10 bg-white">
+            <form action="/messages" method="POST" class="rounded-lg shadow-lg px-10 bg-white">
+              @csrf
               <div class="mt-8 max-w-md">
                 <div class="grid grid-cols-1 gap-6">
                   <label class="block">
                     <span class="text-gray-700">Nom / Prénom</span>
                     <input
+                      name="name"
+                      value="{{ old('name') }}"
                       type="text"
                       class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
                       placeholder=""
                     />
                   </label>
                   <label class="block">
-                    <span class="text-gray-700">E-Mail</span>
-                    <input
-                      type="email"
-                      class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
-                      placeholder="john@example.com"
-                    />
-                  </label>
-                  <label class="block">
                     <span class="text-gray-700">Votre Message</span>
                     <textarea
-                      class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
-                      rows="3"
-                    ></textarea>
+                    name="message"
+                    class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                    rows="3"
+                    >{{ old('message') }}</textarea>
                   </label>
                   <div class="block">
                     <div class="mt-2">
@@ -118,6 +114,7 @@
                           />
                           <span class="ml-2">Inscrivez-moi à la Newsletter</span>
                         </label>
+                        <div><input type="submit" class="bg-blue-400 m-5 p-2 rounded-lg"></div>
                       </div>
                     </div>
                   </div>
