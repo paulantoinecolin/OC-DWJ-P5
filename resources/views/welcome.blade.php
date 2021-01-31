@@ -23,7 +23,7 @@
                 <li class="m-3 font-bold text-lg uppercase item">{{ __('contact') }}</li>
             </ol>
             <div class="flex justify-between items-center">
-            <a href="#" class="nav-link">{{ __('language') }}</a>
+            <a href="#" class="nav-link">{{ strtoupper(app()->getLocale()) }}</a>
             <img class="h-10" src="/images/logo-facebook.jpg" alt="facebook-icon">
             {{-- <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">FR</a>
             <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">DE</a> --}}
@@ -82,6 +82,7 @@
     <div class="contact mt-10 mb-6">
         <h2 class="text-xl font-bold  text-center uppercase tracking-wider">{{ __('contact-title') }}</h2>
         <section class="flex justify-center space-x-40 py-10">
+
             <form action="/messages" method="POST" class="rounded-lg shadow-lg px-10 bg-white">
               @csrf
               <div class="mt-8 max-w-md">
@@ -92,17 +93,24 @@
                       name="name"
                       value="{{ old('name') }}"
                       type="text"
-                      class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                      class="mt-1block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 @error('name') border-red-500 @enderror"
                       placeholder=""
                     />
+
+                    @error('name')
+                    <p class="text-red-500 text-xs">{{ $errors->first('name') }}</p>
+                    @enderror
                   </label>
                   <label class="block">
                     <span class="text-gray-700">Votre Message</span>
                     <textarea
                     name="message"
-                    class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                    class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 @error('message') border-red-500 @enderror"
                     rows="3"
                     >{{ old('message') }}</textarea>
+                    @error('message')
+                    <p class="text-red-500 text-xs">{{ $errors->first('message') }}</p>
+                    @enderror
                   </label>
                   <div class="block">
                     <div class="mt-2">
