@@ -11,14 +11,14 @@ class MessagesController extends Controller
     {
         request()->validate([
             'name' => 'required|max:255',
-            'message' => 'required'
+            'message' => 'required',
+            'newsletter' => 'sometimes',
             ]);
-
             
         $message = new Message();
         $message->name = request('name');
         $message->message = request('message');
-        // add other fields
+        $message->newsletter = request('newsletter');
         $message->save();
 
         return redirect('/');

@@ -17,6 +17,7 @@ class Messages extends Migration
             $table->id();
             $table->string('name');
             $table->text('message');
+            $table->boolean('newsletter');
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
         });

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Messages extends Model
+class Message extends Model
 {
     use HasFactory;
 
@@ -17,5 +17,6 @@ class Messages extends Model
     protected $fillable = [
         'name',
         'message',
+        'newsletter'
     ];
 }

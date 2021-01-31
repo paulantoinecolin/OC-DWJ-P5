@@ -116,7 +116,10 @@
                     <div class="mt-2">
                       <div>
                         <label class="inline-flex items-center">
+                          <input type="hidden" name="newsletter" value="0">
                           <input
+                            name="newsletter"
+                            value="1"
                             type="checkbox"
                             class="rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"
                           />
