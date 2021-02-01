@@ -23,7 +23,7 @@
                 <li class="m-3 font-bold text-lg uppercase item">{{ __('contact') }}</li>
             </ol>
             <div class="flex justify-between items-center">
-            <a href="#" class="nav-link">{{ strtoupper(app()->getLocale()) }}</a>
+            <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}" class="nav-link">{{ strtoupper(app()->getLocale()) }}</a>
             <img class="h-10" src="/images/logo-facebook.jpg" alt="facebook-icon">
             {{-- <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">FR</a>
             <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">DE</a> --}}

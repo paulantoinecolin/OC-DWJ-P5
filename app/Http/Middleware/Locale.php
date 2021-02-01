@@ -15,7 +15,7 @@ class Locale
      * @return mixed
      */
 
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle(Request $request, Closure $next)
     {
         $segment = $request->segment(1);
 

@@ -15,23 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/fr');
-});
 
-Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
+Route::redirect('/', '/fr');
 
-Route::prefix('{lang?}')->middleware('locale')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-});
+Route::view('/fr', 'welcome')->middleware('locale')->name('french');
+Route::view('/de', 'welcome')->middleware('locale')->name('german');
 
+Route::view('/dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';
 
-    
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
-    
-    require __DIR__.'/auth.php';
+// Route::get('/messages', [MessagesController::class, 'index'])->middleware(['auth']);
+// Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
+// Route::get('/messages/{message}', [MessagesController::class, 'show'])->middleware(['auth']);
