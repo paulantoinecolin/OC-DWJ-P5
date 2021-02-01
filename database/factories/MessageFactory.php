@@ -23,6 +23,7 @@ class MessageFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'email' => $this->faker->email,
             'message' => $this->faker->text(),
             'newsletter' => $this->faker->boolean()
         ];

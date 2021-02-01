@@ -9,18 +9,13 @@ class MessagesController extends Controller
 {
     public function store(Request $request)
     {
-        request()->validate([
+        Message::create(request()->validate([
             'name' => 'required|max:255',
+            'email' => 'required|email:rfc,dns',
             'message' => 'required',
             'newsletter' => 'sometimes',
-            ]);
-            
-        $message = new Message();
-        $message->name = request('name');
-        $message->message = request('message');
-        $message->newsletter = request('newsletter');
-        $message->save();
-
+            ]));
+        
         return redirect('/');
     }
 }

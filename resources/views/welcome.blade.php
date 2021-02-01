@@ -96,9 +96,24 @@
                       class="mt-1block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 @error('name') border-red-500 @enderror"
                       placeholder=""
                     />
-
+              
                     @error('name')
                     <p class="text-red-500 text-xs">{{ $errors->first('name') }}</p>
+                    @enderror
+                  </label>
+                 
+                  <label class="block">
+                    <span class="text-gray-700">E-Mail</span>
+                    <input
+                      name="email"
+                      value="{{ old('email') }}"
+                      type="email"
+                      class="mt-1block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 @error('email') border-red-500 @enderror"
+                      placeholder=""
+                    />
+              
+                    @error('email')
+                    <p class="text-red-500 text-xs">{{ $errors->first('email') }}</p>
                     @enderror
                   </label>
                   <label class="block">

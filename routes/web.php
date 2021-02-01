@@ -26,5 +26,5 @@ Route::view('/dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
 require __DIR__.'/auth.php';
 
 // Route::get('/messages', [MessagesController::class, 'index'])->middleware(['auth']);
-// Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
+Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
 // Route::get('/messages/{message}', [MessagesController::class, 'show'])->middleware(['auth']);
