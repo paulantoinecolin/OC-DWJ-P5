@@ -18,4 +18,11 @@ class MessagesController extends Controller
         
         return redirect('/');
     }
+
+    public function show($id)
+    {
+        $message = Message::find($id);
+
+        return view('Messages.show', ['message' => $message]);
+    }
 }
