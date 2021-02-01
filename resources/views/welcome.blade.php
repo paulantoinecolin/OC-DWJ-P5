@@ -140,7 +140,8 @@
                           />
                           <span class="ml-2">Inscrivez-moi à la Newsletter</span>
                         </label>
-                        <div><input type="submit" class="bg-blue-400 m-5 p-2 rounded-lg"></div>
+                        <div>
+                          <input type="submit" class="bg-blue-400 m-5 p-2 rounded-lg"></div>
                       </div>
                     </div>
                   </div>

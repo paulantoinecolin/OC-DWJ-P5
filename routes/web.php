@@ -30,7 +30,7 @@ Route::post('/messages', [MessagesController::class, 'store'])->middleware(['gue
 
 Route::get('dashboard', function () {
     return view('dashboard', [
-        'messages' => \App\Models\Message::paginate(6) // on affichage un nombre d'entrées par page
+        'messages' => \App\Models\Message::paginate(7)
         ]);
 })->middleware(['auth'])->name('dashboard');
     
