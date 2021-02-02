@@ -24,4 +24,10 @@ class ActionsController extends Controller
             exit('Requested file does not exist on our server!');
         }
     }
+
+    public function upload(Request $request)
+    {
+        $request->file('pdf')->store('/public/membership/');
+        return redirect()->back();
+    }
 }

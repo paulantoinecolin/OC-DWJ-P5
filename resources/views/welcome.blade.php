@@ -148,8 +148,19 @@
                 </div>
               </div>
             </form>
+
+            <div>
+              <form action="{{ route('membership') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+                <p>Envoyez-nous votre bulletin d'adhésion rempli</p>
+                <br />
+                <input type="file" name="pdf" />
+                <br />
+                <input type="submit" value=" Save " />
+              </form>
             <div id="map" style="width: 400px; height:400px;" class="rounded-lg shadow-lg m-10"></div>
         </section>
+      </div>
     </div>
 
     <footer class="px-8 py-4 bg-blue-400 rounded-t-lg text-white  text-sm ">

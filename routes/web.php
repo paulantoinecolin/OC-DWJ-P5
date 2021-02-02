@@ -22,6 +22,7 @@ Route::redirect('/', '/fr');
 Route::view('/fr', 'welcome')->middleware('locale')->name('french');
 Route::view('/de', 'welcome')->middleware('locale')->name('german');
 Route::get('/public/pdf/{filename}', [ActionsController::class, 'download']);
+Route::post('/public/membership', [ActionsController::class, 'upload'])->name('membership');
 
 // Route::view('/dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
 
