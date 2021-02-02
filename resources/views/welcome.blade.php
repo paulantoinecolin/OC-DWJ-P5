@@ -79,9 +79,9 @@
             </section>
     </div>
     
-    <div class="contact mt-10 mb-6">
+      <div class="contact mt-10 mb-6">
         <h2 class="text-xl font-bold  text-center uppercase tracking-wider">{{ __('contact-title') }}</h2>
-        <section class="flex justify-center space-x-40 py-10">
+        <section class="flex justify-center items-start space-x-40 py-10">
 
             <form action="/messages" method="POST" class="rounded-lg shadow-lg px-10 bg-white">
               @csrf
@@ -141,7 +141,7 @@
                           <span class="ml-2">Inscrivez-moi à la Newsletter</span>
                         </label>
                         <div>
-                          <input type="submit" class="bg-blue-400 m-5 p-2 rounded-lg"></div>
+                          <input type="submit" value="send" class="bg-blue-400 m-5 p-2 rounded-lg"></div>
                       </div>
                     </div>
                   </div>
@@ -150,17 +150,16 @@
             </form>
 
             <div>
-              <form action="{{ route('membership') }}" method="POST" enctype="multipart/form-data">
-              @csrf
-                <p>Envoyez-nous votre bulletin d'adhésion rempli</p>
+              <form action="{{ route('membership') }}" method="POST" enctype="multipart/form-data" class="rounded-lg shadow-lg px-10 bg-white space-x-5 py-10">
+                @csrf
+                <p>Renvoyez-nous votre bulletin d'adhésion</p>
+                
+                <input type="file" name="pdf" class="bg-gray-200 m-2 p-1 rounded-lg"/>
                 <br />
-                <input type="file" name="pdf" />
-                <br />
-                <input type="submit" value=" Save " />
+                <input type="submit" value="Save" class="bg-blue-400 m-2 p-2 rounded-lg"/>
               </form>
-            <div id="map" style="width: 400px; height:400px;" class="rounded-lg shadow-lg m-10"></div>
+              <div id="map" style="width: 400px; height:400px;" class="rounded-lg shadow-lg m-10"></div>
         </section>
-      </div>
     </div>
 
     <footer class="px-8 py-4 bg-blue-400 rounded-t-lg text-white  text-sm ">

@@ -28,7 +28,7 @@ Route::post('/public/membership', [ActionsController::class, 'upload'])->name('m
 
 require __DIR__.'/auth.php';
 
-Route::post('/messages', [MessagesController::class, 'store'])->middleware(['guest']);
+Route::post('/messages', [MessagesController::class, 'store']);
 
 
 Route::get('dashboard', function () {
