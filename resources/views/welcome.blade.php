@@ -12,7 +12,7 @@
 <body class="text-gray-800">
   <div class="px-10">
     <header class="sticky top-0">
-        <nav class="menu flex justify-between items-stretch shadow bg-blue-400 text-white">
+        <nav class="rounded-b-lg menu flex justify-between items-stretch shadow bg-blue-400 text-white">
             <div>
                 <img class="h-20" src="/images/logo-efa.jpg" alt="logo-efa">
             </div>
@@ -24,7 +24,7 @@
             </ol>
             <div class="flex justify-between items-center">
             <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}" class="nav-link">{{ strtoupper(app()->getLocale()) }}</a>
-            <img class="h-10" src="/images/logo-facebook.jpg" alt="facebook-icon">
+            <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"><img class="h-10" src="/images/logo-facebook.jpg" alt="facebook-icon"></a>
             {{-- <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">FR</a>
             <a href="#" class="nav-link"><img class="h-10" src="/images/logo-lang.png" alt="switch-lang">DE</a> --}}
           </div>
@@ -152,11 +152,16 @@
         </section>
     </div>
 
-    <footer class="px-8 py-4 bg-blue-400 rounded-t-lg text-white font-bold  uppercase">
-        <address>Présidente : Stephanie Zillmer <br>
-            07 51 89 89 89 <br>
-            contact@efa-34.org
-        </address>
+    <footer class="px-8 py-4 bg-blue-400 rounded-t-lg text-white  text-sm ">
+      <div class="flex justify-between">
+        <div>
+          <address>Stephanie Zillmer - Présidente<br>
+              tél : 07 51 89 89 89 <br>
+              e-mail : contact@efa-34.org
+          </address>
+        </div>
+        <div><a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>Télécharger le bulletin d'adhésion</a></div>
+      </div>
         <p>&copy; {{ now()->year }} EFA – Eveil Franco Allemand</p>
     </footer>
   </div>

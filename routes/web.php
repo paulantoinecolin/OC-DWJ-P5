@@ -3,6 +3,7 @@
 use App\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::redirect('/', '/fr');
 
 Route::view('/fr', 'welcome')->middleware('locale')->name('french');
 Route::view('/de', 'welcome')->middleware('locale')->name('german');
+Route::get('/public/pdf/{filename}', [ActionsController::class, 'download']);
 
 // Route::view('/dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
 
