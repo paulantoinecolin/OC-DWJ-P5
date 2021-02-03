@@ -45,7 +45,7 @@
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-wrap">
                                                         <div class="text-sm text-gray-900">
-                                                            <a href="/messages/{{ $message->id }}"
+                                                            <a href="/dashboard/{{ $message->id }}"
                                                                 class="font-bold text-blue-500">{{
                                                                   Str::limit($message->message, 200) 
                                                                     }}</a>

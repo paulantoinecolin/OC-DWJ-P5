@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActionsController;
 
+require __DIR__.'/auth.php';
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,24 +18,25 @@ use App\Http\Controllers\ActionsController;
 */
 
 
+// HOME
 Route::redirect('/', '/fr');
-
 Route::view('/fr', 'welcome')->middleware('locale')->name('french');
 Route::view('/de', 'welcome')->middleware('locale')->name('german');
+
+// MESSAGES
+Route::post('/messages', [MessagesController::class, 'store']);
+Route::get('/messages', function () {
+    abort(404);
+});
+
+// FILES DOWNLOAD/UPLOAD
 Route::get('/public/pdf/{filename}', [ActionsController::class, 'download']);
 Route::post('/public/membership', [ActionsController::class, 'upload'])->name('membership');
-
-// Route::view('/dashboard', 'dashboard')->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
-Route::post('/messages', [MessagesController::class, 'store']);
+Route::get('/public/membership', function () {
+    abort(404);
+});
 
 
-Route::get('dashboard', function () {
-    return view('dashboard', [
-        'messages' => \App\Models\Message::paginate(7)
-        ]);
-})->middleware(['auth'])->name('dashboard');
-    
-Route::get('/messages/{message}', [MessagesController::class, 'show'])->middleware(['auth']);
+// ADMIN DASHBOARD
+Route::get('/dashboard', [MessagesController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/{message}', [MessagesController::class, 'show'])->middleware(['auth']);
