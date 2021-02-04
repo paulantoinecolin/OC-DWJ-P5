@@ -166,13 +166,14 @@
                     </div>
                 </form>
                 <div>
+                    <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>Télécharger
+                        le
+                        bulletin d'adhésion</a>
+                </div>
                     <form action="{{ route('membership') }}" method="POST"
                         enctype="multipart/form-data" class="rounded-lg shadow-lg px-10 bg-white space-x-5 py-10">
                         @csrf
                         <div>
-                            <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>Télécharger
-                                le
-                                bulletin d'adhésion</a></div>
                         <p>Renvoyez-nous votre bulletin d'adhésion</p>
                         <label
                             class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
