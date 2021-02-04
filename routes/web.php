@@ -40,3 +40,4 @@ Route::get('/public/membership', function () {
 // ADMIN DASHBOARD
 Route::get('/dashboard', [MessagesController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard/{message}', [MessagesController::class, 'show'])->middleware(['auth']);
+Route::delete('/dashboard/{message}', [MessagesController::class, 'destroy'])->middleware(['auth']);

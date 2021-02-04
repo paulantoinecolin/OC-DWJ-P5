@@ -29,6 +29,10 @@
                                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Newsletter
                                                 </th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Delete
+                                                </th>
                                             </tr>
                                         </thead>
                                         @foreach($messages as $message)
@@ -55,6 +59,17 @@
                                         value=""
                                         {{ ($message->newsletter == 1 ? 'checked' : '') }}
                                         onclick="return false;">
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <form method="POST" action="/dashboard/{{ $message->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" viewBox="0 0 24 24" stroke="red" class="mx-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        </button>
+                                    </form>
                                 </td>
                                 </tr>
                                 </tbody>
