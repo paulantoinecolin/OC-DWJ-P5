@@ -11,43 +11,6 @@
 </head>
 
 <body class="text-gray-800">
-
-    {{-- WICKED BLOCKS MENU --}}
-
-    <header class="text-gray-700 bg-white border-t border-b body-font">
-        <div class="container flex flex-col flex-wrap p-5  mx-auto md:items-center md:flex-row ">
-            <a href="#" class="flex items-center w-40 mb-4 font-medium text-gray-900 title-font md:mb-0">
-                <img src="/images/logo-efa.jpg" alt="logo-efa">
-            </a>
-            <nav class="flex flex-wrap items-center justify-center ml-4 text-base">
-                <a href="#"
-                    class="mr-5 text-sm font-semibold text-gray-700 rounded-xl hover:text-gray-800">{{ __('home') }}</a>
-                <a href="#" class="mr-5 text-sm font-semibold text-gray-700 rounded-xl hover:text-gray-800">{{ __('kidsclub') }}</a>
-                <a href="#" class="mr-5 text-sm font-semibold text-gray-700 rounded-xl hover:text-gray-800">{{ __('events') }}</a>
-                <a href="#" class="mr-5 text-sm font-semibold text-gray-700 rounded-xl hover:text-gray-800">{{ __('contact') }}</a>
-            </nav>
-                <a  href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                class="p-1 ml-auto rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                <img class="w-8 h-8 rounded-full "
-                src="{{  app()->getLocale() == 'fr' ? '/images/germany.png' : '/images/france.png'  }}"
-                alt="">
-                </a>
-                <a href="https://www.facebook.com/eveilfrancoallemand" target="blank" class="flex ml-3 rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class="w-8 h-8 rounded-full "
-                    src="/images/logo-facebook.png"
-                    alt="">
-                </a>
-        </div>
-    </header>
-    <div
-        class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl">
-        <p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font">
-            -- Content goes here --
-        </p>
-    </div>
-    {{-- WICKED BLOCKS MENU --}}
-
-
     <div class="px-10">
         <header class="sticky top-0">
             <nav class="rounded-b-lg menu flex justify-between items-stretch shadow bg-blue-400 text-white">

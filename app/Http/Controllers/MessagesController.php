@@ -27,6 +27,6 @@ class MessagesController extends Controller
             'newsletter' => 'sometimes',
             ]));
         
-        return redirect('/');
+        return redirect()->back();
     }
 }
