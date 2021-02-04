@@ -14,7 +14,7 @@
 
     {{-- MENU --}}
 
-    <header class="sticky top-0 text-blue-100 bg-blue-700 body-font">
+    <header class="sticky top-0 text-blue-100 bg-blue-900 body-font">
         <div class="container flex flex-col flex-wrap p-5  mx-auto md:items-center md:flex-row">
             <a href="#" class="flex items-center w-40 mb-4 mr-40 font-medium text-gray-800 title-font md:mb-0">
                 <img src="/images/logo-efa.jpg" alt="logo-efa" class="w-20 md:w-32 lg:w-48 rounded">
@@ -30,14 +30,14 @@
                     class="mr-5 text-lg uppercase font-bold text-blue-200 rounded-xl hover:text-white">{{ __('contact') }}</a>
             </nav>
             <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                class="p-1 ml-auto rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                class="p-1 ml-auto rounded-full ring-2 ring-offset-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <img class="w-8 h-8 rounded-full "
                     src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
                     alt="">
             </a>
             <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
-                class="flex ml-3 rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class=" w-8 h-8 rounded-full "
+                class="flex ml-3 rounded-full ring-2 ring-offset-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
+                <img class=" w-10 h-10 rounded-full "
                     src=" /images/logo-facebook.png" alt="">
             </a>
         </div>
@@ -244,9 +244,10 @@
                                     <span
                                         class="text-red-500 text-xs">{{ $errors->first('message') }}</span>
                                 @enderror
-                                <textarea id="message" name="message" placeholder="*message"
-                                    class="w-full px-4 py-2 mb-4 mr-4 text-base text-blue-700 bg-blue-200 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
+                                <textarea id="message" name="message" placeholder="*message" maxlength="255"
+                                    class="w-full px-4 py-2 mr-4 text-base text-blue-700 bg-blue-200 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
                                     rows="3" required></textarea>
+                                    <div id="counter" class="text-xs text-gray-500 font-semibold absolute bottom-2 right-2"></div>
                             </div>
 
                             {{-- Newsletter --}}
@@ -347,7 +348,32 @@
             var marker = new mapboxgl.Marker()
                 .setLngLat([3.89180, 43.596204])
                 .addTo(map);
+        </script>
 
+        <script>
+            function countChar(val) {
+        var len = val.value.length;
+        if (len >= 500) {
+          val.value = val.value.substring(0, 10);
+        } else {
+          $('#charNum').text(500 - len);
+        }
+      };
+        </script>
+
+        <script>
+            const messageEle = document.getElementById('message');
+            const counterEle = document.getElementById('counter');
+
+            messageEle.addEventListener('input', function(e) {
+            const target = e.target;
+
+            // Get the `maxlength` attribute
+            const maxLength = target.getAttribute('maxlength');
+
+            // Count the current number of characters
+            counterEle.innerHTML = maxLength - target.value.length;
+            });
         </script>
     </div>
 </body>
