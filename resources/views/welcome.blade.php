@@ -12,12 +12,12 @@
 
 <body>
 
-    {{-- WICKED BLOCKS MENU --}}
+    {{-- MENU --}}
 
-    <header class="text-blue-100 bg-blue-700 body-font rounded-b-lg">
+    <header class="sticky top-0 text-blue-100 bg-blue-700 body-font">
         <div class="container flex flex-col flex-wrap p-5  mx-auto md:items-center md:flex-row">
-            <a href="#" class="flex items-center w-40 mb-4 font-medium text-gray-800 title-font md:mb-0">
-                <img src="/images/logo-efa.jpg" alt="logo-efa">
+            <a href="#" class="flex items-center w-40 mb-4 mr-40 font-medium text-gray-800 title-font md:mb-0">
+                <img src="/images/logo-efa.jpg" alt="logo-efa" class="w-20 md:w-32 lg:w-48 rounded">
             </a>
             <nav class="flex flex-wrap items-center justify-center ml-4 text-base">
                 <a href="#"
@@ -32,7 +32,7 @@
             <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
                 class="p-1 ml-auto rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <img class="w-8 h-8 rounded-full "
-                    src="{{ app()->getLocale() == 'fr' ? '/images/germany.png' : '/images/france.png' }}"
+                    src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
                     alt="">
             </a>
             <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
@@ -45,7 +45,7 @@
 
     <div class="container w-full p-15 m-4 mx-auto my-16 text-center bg-white h-96 rounded-xl">
 
-        {{-- WICKED BLOCKS HEADER --}}
+        {{-- HEADER --}}
 
         <section class="text-gray-700 body-font">
             <div class="container px-8 mx-auto py-2 lg:px-4">
@@ -61,7 +61,7 @@
             </div>
         </section>
 
-        {{-- WICKED BLOCKS CLUBS GRID --}}
+        {{-- CLUBS GRID --}}
 
         <section class="text-gray-700 body-font">
             <div class="container px-8 pt-24 mx-auto lg:px-4">
@@ -103,7 +103,7 @@
             </div>
         </section>
 
-        {{-- WICKED BLOCKS RIGHT --}}
+        {{-- RIGHT --}}
 
         <section class="text-gray-700 body-font mt-24">
             <h2 class="mb-1 text-2xl font-black tracking-widest text-blue-800 uppercase title-font">
@@ -147,7 +147,7 @@
         </section>
 
 
-        {{-- WICKED BLOCKS LEFT --}}
+        {{-- LEFT --}}
 
         <section class="text-gray-700 body-font">
             <div class="container flex flex-col items-center px-5 py-16 mx-auto lg:px-20 lg:py-24 md:flex-row">
@@ -200,15 +200,15 @@
 
 
 
-        {{-- WICKED FORM --}}
+        {{-- FORM --}}
 
         <section class="text-gray-700 body-font">
             <div class=" container px-8 pt-48 mx-auto lg:px-4">
                 <h2 class="mb-1 text-2xl font-black tracking-widest text-blue-800 uppercase title-font">
                     {{ __('contact-title') }}</h2>
                 <div class="flex flex-wrap mt-10 mb-6">
-                    <div
-                        class="flex flex-col w-full p-8 mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
+                    <div class="flex flex-col w-full p-8 mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
+                        <div>
                         <form action="/messages" method="POST">
                             @csrf
 
@@ -248,6 +248,8 @@
                                     class="w-full px-4 py-2 mb-4 mr-4 text-base text-blue-700 bg-blue-200 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
                                     rows="3" required></textarea>
                             </div>
+
+                            {{-- Newsletter --}}
                             <div class="flex my-4">
                                 <label class="flex items-center">
                                     <input type="hidden" name="newsletter" value="0">
@@ -257,39 +259,52 @@
                             </div>
                             <button
                                 class="px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
-                                value="send">Envoyer</button>
-                    </div>
-                    <div>
-                        <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>Télécharger
-                            le
-                            bulletin d'adhésion</a>
-                        <form action="{{ route('membership') }}" method="POST"
-                            enctype="multipart/form-data" class="rounded-lg shadow-lg px-10 bg-white space-x-5 py-10">
-                            @csrf
-                            <div>
-                                <p>Renvoyez-nous votre bulletin d'adhésion</p>
-                                <label
-                                    class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
-                                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-                                        <path
-                                            d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                                    </svg>
-                                    <span class="mt-2 text-base leading-normal">Choisir un fichier</span>
-                                    <input type='file' name="pdf" class="hidden" />
+                                value="send">Envoyer votre message</button>
+                        </div>
+                    </form>
+                        <div class="flex flex-col mt-20 items-center my-4">
+                            <p class="mb-2">1. Télécharger le bulletin d'adhésion</p>
+                            <label
+                            class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
+                            <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                  </svg></a>
                                 </label>
-                                <input type="submit" value="Save" class="bg-blue-400 m-2 p-2 rounded-lg" />
-                        </form>
+                            </div>
+                        <div>
+                            <form action="{{ route('membership') }}" method="POST"
+                        enctype="multipart/form-data" class="rounded-lg  px-10 bg-white space-x-5 py-10">
+                        @csrf
+                            <p>2. Renvoyez-nous votre bulletin d'adhésion rempli et signé</p>
+                            <label
+                            class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                              </svg>
+                                    <span class="mt-2 text-base leading-normal">Choisir un fichier</span>
+                                    <input type='file' name="pdf" class="hidden"/>
+                                </label>
+                                <button
+                                class="mt-4 px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
+                                value="Save">Envoyer votre fichier</button>
+                            </form>
+                        </div>
                     </div>
+
+
+
                     <div>
                         <div id="map" style="width: 400px; height:400px;" class="rounded-lg shadow-lg m-10">
                         </div>
                     </div>
+
+
                 </div>    
             </div>
         </section>
 
-        {{-- WICKED BLOCKS FOOTER --}}
+        {{-- FOOTER --}}
 
         <footer class="mt-6 text-gray-700 bg-white body-font">
             <div>
@@ -316,10 +331,6 @@
                 </div>
             </div>
         </footer>
-
-        {{-- WICKED BLOCKS CONTENT ENDING --}}
-
-
 
         <script>
             mapboxgl.accessToken =
