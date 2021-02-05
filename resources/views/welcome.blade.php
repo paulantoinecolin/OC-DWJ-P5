@@ -14,30 +14,30 @@
 
     {{-- MENU --}}
 
-    <header class="sticky top-0 text-blue-100 bg-blue-900 body-font">
-        <div class="container flex flex-col flex-wrap p-5  mx-auto md:items-center md:flex-row">
-            <a href="#" class="flex items-center w-40 mb-4 mr-40 font-medium text-gray-800 title-font md:mb-0">
-                <img src="/images/logo-efa.jpg" alt="logo-efa" class="w-20 md:w-32 lg:w-48 rounded">
+    <header id="home" class="sticky top-0 text-blue-100 bg-blue-900 body-font">
+        <div class="container flex flex-col flex-wrap py-2 mx-auto md:items-center md:flex-row">
+            <a href="#home" class="flex items-center w-40 mb-4 mr-40 font-medium text-gray-800 title-font md:mb-0">
+                <img src="/images/logo-efa.jpg" alt="logo-efa" class="w-20 md:w-32 lg:w-36">
             </a>
-            <nav class="flex flex-wrap items-center justify-center ml-4 text-base">
-                <a href="#"
-                    class="mr-5 text-lg uppercase font-bold text-blue-200 rounded-xl hover:text-white">{{ __('home') }}</a>
-                <a href="#"
-                    class="mr-5 text-lg uppercase font-bold text-blue-200 rounded-xl hover:text-white">{{ __('kidsclub') }}</a>
-                <a href="#"
-                    class="mr-5 text-lg uppercase font-bold text-blue-200 rounded-xl hover:text-white">{{ __('events') }}</a>
-                <a href="#"
-                    class="mr-5 text-lg uppercase font-bold text-blue-200 rounded-xl hover:text-white">{{ __('contact') }}</a>
+            <nav class="flex flex-wrap items-center justify-center ml-20 text-base">
+                <a href="#home"
+                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('home') }}</a>
+                <a href="#kidsclub"
+                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('kidsclub') }}</a>
+                <a href="#events"
+                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('events') }}</a>
+                <a href="#contact"
+                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('contact') }}</a>
             </nav>
             <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                class="p-1 ml-auto rounded-full ring-2 ring-offset-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                <img class="w-8 h-8 rounded-full "
+                class="p-1 ml-auto rounded-full ring-1 ring-offset-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <img class="w-6 h-6 rounded-full "
                     src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
                     alt="">
             </a>
             <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
-                class="flex ml-3 rounded-full ring-2 ring-offset-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class=" w-10 h-10 rounded-full "
+                class="flex ml-3 rounded-full ring-1 ring-offset-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
+                <img class=" w-8 h-8 rounded-full "
                     src=" /images/logo-facebook.png" alt="">
             </a>
         </div>
@@ -63,10 +63,10 @@
 
         {{-- CLUBS GRID --}}
 
-        <section class="text-gray-700 body-font">
-            <div class="container px-8 mx-auto lg:px-4">
+        <section id="kidsclub" class="text-gray-700 body-font mt-10">
+            <div class="container  mx-auto lg:px-4">
                 <div id="kids-clubs" class="mt-10"></div>
-                <h2 class="mb-1 text-2xl font-black tracking-widest text-blue-800 uppercase title-font">
+                <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                     {{ __('club-title') }}</h2>
                 <div class="flex flex-wrap text-left">
                     <div class="px-8 py-6 lg:w-1/3 md:w-full">
@@ -111,8 +111,8 @@
 
         {{-- RIGHT --}}
 
-        <section class="text-gray-700 body-font mt-24">
-            <h2 class="mb-1 text-2xl font-black tracking-widest text-blue-800 uppercase title-font">
+        <section id="events" class="text-gray-700 body-font mt-24">
+            <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                 {{ __('events-title') }}</h2>
             <div
                 class="container flex flex-col items-center px-5 py-16 bg-gray-100 rounded-t-lg mx-auto lg:px-20 lg:py-14 md:flex-row">
@@ -121,9 +121,9 @@
                 </div>
                 <div
                     class="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
-                    <h1
+                    <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
-                        Renforcer la langue allemande en permettant sa pratique en dehors du cercle familial</h1>
+                        Renforcer la langue allemande en permettant sa pratique en dehors du cercle familial</h2>
                     <p class="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">l’EFA
                         organise des rencontres familiaux pour donner l’occasion aux adultes de discuter et de
                         s’échanger
@@ -161,10 +161,10 @@
                 class="container flex flex-col items-center px-5 py-16 bg-gray-100 rounded-b-lg  mx-auto lg:px-20 lg:py-24 md:flex-row">
                 <div
                     class="flex flex-col items-center w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 lg:mr-20 md:items-start md:text-left md:mb-0 lg:text-center">
-                    <h1
+                    <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
                         Soutenir les parents dans leur désir de communiquer dans leur langue maternelle
-                    </h1>
+                    </h2>
                     <p class="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
                         Les parents profitent eux aussi des échanges avec d’autres parents.
                         De nombreuses amitiés sont ainsi nées.
@@ -210,27 +210,29 @@
 
         {{-- FORM --}}
 
-        <section class="text-gray-700 body-font">
-            <div class=" container px-8 pt-20 mx-auto lg:px-4">
-                <h2 class="mb-1 text-2xl font-black tracking-widest text-blue-800 uppercase title-font">
+        <section id="contact" class="text-gray-700 body-font">
+            <div class="container px-8 pt-10 mx-auto lg:px-4">
+                <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                     {{ __('contact-title') }}</h2>
                 <div class="flex flex-wrap mt-10 mb-6">
                     <div
                         class="flex flex-col w-full p-8 mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
                         <div>
-                            <form action="/messages" method="POST">
+                            <h3 class="mb-5 text-lg font-black tracking-widest text-blue-800 uppercase title-font">
+                                Ecrivez nous :</h3>
+                            <form action="/messages" method="POST" class="inline-block">
                                 @csrf
 
                                 {{-- Name --}}
                                 <div class="relative ">
                                     @error('name')
                                         <span
-                                            class=" text-red-500 text-xs">{{ $errors->first('name') }}
+                                            class="text-red-500 text-xs">{{ $errors->first('name') }}
                                         </span>
                                     @enderror
                                     <input type="text" id="name" name="name" placeholder="*nom / prénom"
                                         value="{{ old('name') }}"
-                                        class="w-full px-4 py-2 mb-4 mr-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('name') border-red-500 @enderror"
+                                        class="w-full px-4 mb-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('name') border-red-500 @enderror"
                                         required>
                                 </div>
 
@@ -238,12 +240,12 @@
                                 <div class="relative ">
                                     @error('email')
                                         <span
-                                            class=" text-red-500 text-xs">{{ $errors->first('email') }}
+                                            class="text-red-500 text-xs">{{ $errors->first('email') }}
                                         </span>
                                     @enderror
                                     <input type="email" id="email" name="email" placeholder="*email"
                                         value="{{ old('email') }}"
-                                        class="w-full px-4 py-2 mb-4 mr-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('email') border-red-500 @enderror"
+                                        class="w-full px-4 mb-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('email') border-red-500 @enderror"
                                         required>
                                 </div>
 
@@ -254,27 +256,27 @@
                                             class="text-red-500 text-xs">{{ $errors->first('message') }}</span>
                                     @enderror
                                     <textarea id="message" name="message" placeholder="*message" maxlength="255"
-                                        class="w-full px-4 py-2 mr-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
+                                        class="w-full px-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
                                         rows="3" required></textarea>
                                     <div id="counter"
-                                        class="text-xs text-gray-500 font-semibold absolute bottom-2 right-2"></div>
+                                        class="text-xs text-red-500 font-semibold absolute bottom-2 right-2"></div>
                                 </div>
 
                                 {{-- Newsletter --}}
-                                <div class="flex my-4">
+                                <div class="flex my-2">
                                     <label class="flex items-center">
                                         <input type="hidden" name="newsletter" value="0">
                                         <input type="checkbox" name="newsletter" value="1"
                                             class="form-checkbox rounded">
-                                        <span class="ml-2">Souscrire à la Newsletter </span>
+                                        <span class="ml-2 text-sm">Souscrire à la Newsletter </span>
                                     </label>
                                 </div>
                                 <button
-                                    class="mt-5 px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
+                                    class="px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
                                     value="send">Envoyer votre message</button>
                         </div>
                         </form>
-                        <div class="flex flex-col flex-auto mt-10 items-center">
+                        <div class="flex flex-col flex-initial mt-10 items-center">
                             <label
                                 class="w-64 flex flex-col items-center mb-10 px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
                                 <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>
@@ -310,20 +312,43 @@
                     <div class="flex flex-col w-full mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
                         <div class="container flex flex-col flex-wrap px-5 py-6 mx-auto sm:flex-row">
                             <div class="flex flex-wrap items-center justify-center mx-auto text-base">
-                                <address class="justify-center text-sm text-center text-blue-200">Stephanie Zillmer -
-                                    Présidente<br>
-                                    tél : 07 51 89 89 89 <br>
-                                    <a href="mailto:contact@efa-34.org" class="hover:text-white">e-mail :
-                                        contact@efa-34.org</a>
+                                <h3 class="mb-5 text-lg font-black tracking-widest text-blue-800 uppercase title-font">
+                                    Passez nous voir :</h3>
+                                <address class="w-70 items-center p-6 mb-10 justify-center text-sm text-left rounded-lg shadow-lg tracking-wide  text-gray-600">
+                                    <div>
+                                    <svg class="w-4 h-4 inline text-blue-700 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                      </svg>
+                                      <label class="text-base not-italic">
+                                        Stephanie Zillmer - Présidente      
+                                      </label>
+                                    </div>
+                                    <div>
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                        <label class="text-base not-italic">07 51 89 89 89</label>
+                                    </div>
+                                    <div>
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                                          </svg>
+                                        <a href="mailto:contact@efa-34.org" class="text-base not-italic hover:text-blue-700">contact@efa-34.org</a><br>
+                                    </div>
+                                    <div>
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                          </svg>
+                                        <a href="https://goo.gl/maps/46ES9pgGrdYFhzvr5" target="blank" class="text-base not-italic hover:text-blue-700">
+                                        14 rue de l'Améthyste<span class="inline-block ml-5">34070 Montpellier</span></a>
+                                    </div>
                                 </address>
                             </div>
-                                <div id="map" style="width: 400px; height:400px;" class="rounded-lg shadow-lg">
+                                <div id="map" style="width: 100%; height:400px;" class="mt-24 rounded-lg shadow-lg">
                                 </div>
                         </div>
-                        
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -367,7 +392,6 @@
                 // Count the current number of characters
                 counterEle.innerHTML = maxLength - target.value.length;
             });
-
         </script>
     </div>
 </body>
