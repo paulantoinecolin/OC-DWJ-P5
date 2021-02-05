@@ -11,9 +11,7 @@
 </head>
 
 <body>
-
     {{-- MENU --}}
-
     <header id="home" class="sticky top-0 text-blue-100 bg-blue-900 body-font">
         <div class="container flex flex-col flex-wrap items-center py-2 mx-auto md:flex-row md:justify-between">
             <a href="#home" class="flex items-center mb-4 font-medium text-gray-800 title-font md:mb-0 lg:w-40">
@@ -37,8 +35,8 @@
                         alt="">
                 </a>
                 <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
-                    class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class=" w-8 h-8 rounded-full" src=" /images/logo-facebook.png" alt="">
+                    class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <img class=" w-8 h-8 rounded-full" src=" /images/logo-facebook.png" alt="">
                 </a>
             </div>
         </div>
@@ -86,13 +84,9 @@
         </div>
     </div>
 
-
     <div class="container w-full p-15 m-4 mx-auto my-16 text-center bg-white h-96 rounded-xl">
 
-
-
         {{-- HEADER --}}
-
         <section class="text-gray-700 body-font">
             <div class="container px-8 mx-auto py-2 lg:px-4">
                 <div class="flex flex-col w-full mb-12 text-left lg:text-center">
@@ -108,7 +102,6 @@
         </section>
 
         {{-- CLUBS GRID --}}
-
         <section id="kidsclub" class="text-gray-700 body-font mt-10">
             <div class="container  mx-auto lg:px-4">
                 <div id="kids-clubs" class="mt-10"></div>
@@ -156,7 +149,6 @@
         </section>
 
         {{-- RIGHT --}}
-
         <section id="events" class="text-gray-700 body-font mt-24">
             <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                 {{ __('events-title') }}</h2>
@@ -201,9 +193,7 @@
             </div>
         </section>
 
-
         {{-- LEFT --}}
-
         <section class="text-gray-700 body-font">
             <div
                 class="container flex flex-col items-center px-5 py-16 bg-gray-100 rounded-b-lg  mx-auto lg:px-20 lg:py-24 md:flex-row">
@@ -255,10 +245,7 @@
             </div>
         </section>
 
-
-
         {{-- FORM --}}
-
         <section id="contact" class="text-gray-700 body-font">
             <div class="container px-8 pt-10 mx-auto lg:px-4">
                 <h2 class="text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
@@ -276,7 +263,6 @@
                                         {{ session()->get('message') }}
                                     </div>
                                 @endif
-
                                 {{-- Name --}}
                                 <div class="relative ">
                                     @error('name')
@@ -289,7 +275,6 @@
                                         class="w-full px-4 mb-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('name') border-red-500 @enderror"
                                         required>
                                 </div>
-
                                 {{-- E-Mail --}}
                                 <div class="relative ">
                                     @error('email')
@@ -302,7 +287,6 @@
                                         class="w-full px-4 mb-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('email') border-red-500 @enderror"
                                         required>
                                 </div>
-
                                 {{-- Message --}}
                                 <div class="relative ">
                                     @error('message')
@@ -313,23 +297,23 @@
                                         class="w-full px-4 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-blue-100 focus:ring-0 @error('message') border-red-500 @enderror"
                                         rows="3" required></textarea>
                                     <div id="counter"
-                                        class="text-xs text-red-500 font-semibold absolute bottom-2 right-2"></div>
+                                        class="text-xs text-red-500 font-semibold absolute bottom-2 right-2">
+                                    </div>
                                 </div>
-
                                 {{-- Newsletter --}}
                                 <div class="flex my-2">
                                     <label class="flex items-center">
                                         <input type="hidden" name="newsletter" value="0">
                                         <input type="checkbox" name="newsletter" value="1"
                                             class="form-checkbox rounded">
-                                        <span class="ml-2 text-sm">Souscrire à la Newsletter </span>
+                                        <span class="ml-2 text-sm">Souscrire à la Newsletter</span>
                                     </label>
                                 </div>
                                 <button
                                     class="px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
                                     value="send">Envoyer votre message</button>
+                            </form>
                         </div>
-                        </form>
                         <div class="flex flex-col flex-initial mt-10 items-center">
                             <label
                                 class="w-64 flex flex-col items-center mb-10 px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
@@ -364,14 +348,12 @@
                                     <input id="uploadFile" type="file" name="pdf" class="hidden" />
                                 </label>
                                 <div id="chosenFile" class=""></div>
-                                <button
-                                    id="submitFile"
+                                <button id="submitFile"
                                     class="disabled:opacity-50 mt-4 px-12 py-2 font-semibold text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
                                     value="Save">Envoyer votre fichier</button>
                             </form>
                         </div>
                     </div>
-
                     <div
                         class="flex flex-col w-full mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
                         <div class="container flex flex-col flex-wrap px-5 py-8 mx-auto sm:flex-row">
@@ -381,7 +363,7 @@
                                 <address
                                     class="w-70 items-center p-6 mb-10 justify-center text-sm text-left rounded-lg shadow-lg tracking-wide  text-gray-600">
                                     <div>
-                                        <svg class="w-4 h-4 inline text-blue-700 xmlns=" http://www.w3.org/2000/svg"
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -431,7 +413,6 @@
         </section>
 
         {{-- FOOTER --}}
-
         <footer>
             <div class="mt-10 px-5 py-4 text-base bg-blue-900 rounded-t-lg">
                 <p class="text-sm text-gray-200"> &copy; EFA – Eveil Franco Allemand - {{ now()->year }}</p>
@@ -454,6 +435,7 @@
             var marker = new mapboxgl.Marker()
                 .setLngLat([3.89180, 43.596204])
                 .addTo(map);
+
         </script>
 
         <script>
@@ -470,6 +452,7 @@
                 // Count the current number of characters
                 counterEle.innerHTML = maxLength - target.value.length;
             });
+
         </script>
 
         <script>
@@ -485,8 +468,9 @@
             buttonAccept.addEventListener('click', function (e) {
                 bannerRGPD.classList.add("hidden");
             })
+
         </script>
-        
+
         <script>
             let submitDocument = document.getElementById('uploadFile');
             let submitButton = document.getElementById('submitFile');
@@ -494,15 +478,16 @@
 
             submitButton.disabled = true;
 
-            submitDocument.addEventListener("change", function() {
-              if (submitDocument.files.length > 0) {
-                let file = submitDocument.files[0];
-                submitButton.disabled = false;
-                chosenFile.innerHTML += file.name;
-                chosenFile.className += "bg-gray-100 text-gray-700 rounded-lg my-2 p-2";
-              }
+            submitDocument.addEventListener("change", function () {
+                if (submitDocument.files.length > 0) {
+                    let file = submitDocument.files[0];
+                    submitButton.disabled = false;
+                    chosenFile.innerHTML += file.name;
+                    chosenFile.className += "bg-gray-100 text-gray-700 rounded-lg my-2 p-2";
+                }
             });
-          </script>
+
+        </script>
     </div>
 </body>
 
