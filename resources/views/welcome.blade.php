@@ -347,6 +347,11 @@
                             <form action="{{ route('membership') }}" method="POST"
                                 enctype="multipart/form-data" class="inline-block">
                                 @csrf
+                                @if(session()->has('feedback'))
+                                    <div class="bg-green-200 text-green-900 rounded-lg my-2 p-2">
+                                        {{ session()->get('feedback') }}
+                                    </div>
+                                @endif
                                 <label
                                     class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
                                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"

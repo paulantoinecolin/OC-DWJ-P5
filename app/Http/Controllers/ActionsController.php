@@ -28,6 +28,7 @@ class ActionsController extends Controller
     public function upload(Request $request)
     {
         $request->file('pdf')->store('/public/membership/');
-        return redirect()->back();
+
+        return redirect()->back()->with('feedback', 'Votre fichier a bien été envoyé !');
     }
 }
