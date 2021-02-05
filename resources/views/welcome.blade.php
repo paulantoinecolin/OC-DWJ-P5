@@ -27,16 +27,16 @@
                 <a href="#contact"
                     class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('contact') }}</a>
             </nav>
-            <div class="flex justify-center">
+            <div class="flex justify-center items-center">
                 <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                    class="p-1  hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <img class="w-6 h-6 rounded-full "
+                    class="p-1 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <img class="w-7 h-7 rounded-full "
                         src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
                         alt="">
                 </a>
                 <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
                     class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <img class=" w-8 h-8 rounded-full" src=" /images/logo-facebook.png" alt="">
+                    <img class="w-8 h-8 rounded-full" src=" /images/logo-facebook.png" alt="">
                 </a>
             </div>
         </div>
