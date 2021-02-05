@@ -43,10 +43,51 @@
         </div>
     </header>
 
+{{-- RGPD Banner --}}
+<div id="bannerRGPD" class="bg-blue-900">
+    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between flex-wrap">
+        <div class="w-0 flex-1 flex items-center">
+          <span class="flex p-2 rounded-lg bg-blue-500">
+            <!-- Heroicon name: outline/speakerphone -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+            </svg>
+          </span>
+          <p class="ml-3 font-medium text-white truncate">
+            <span class="md:hidden">
+              Conditions d'utilisation des emails
+            </span>
+            <span class="hidden md:inline">
+              Merci de prendre un instant pour lire nos conditions d'utililisation de collecte des emails
+            </span>
+          </p>
+        </div>
+        <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+          <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-blue-800 bg-white hover:bg-indigo-50">
+            Accepter
+          </a>
+        </div>
+        <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+          <button id="dismiss" type="button" class="-mr-1 flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+            <span class="sr-only">Dismiss</span>
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
     <div class="container w-full p-15 m-4 mx-auto my-16 text-center bg-white h-96 rounded-xl">
-
-        {{-- HEADER --}}
-
+    
+        
+    
+    {{-- HEADER --}}
+    
         <section class="text-gray-700 body-font">
             <div class="container px-8 mx-auto py-2 lg:px-4">
                 <div class="flex flex-col w-full mb-12 text-left lg:text-center">
@@ -115,7 +156,7 @@
             <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                 {{ __('events-title') }}</h2>
             <div
-                class="container flex flex-col items-center px-5 py-16 bg-gray-100 rounded-t-lg mx-auto lg:px-20 lg:py-14 md:flex-row">
+                class="container flex flex-col items-center mt-8 px-5 py-16 bg-gray-100 rounded-t-lg mx-auto lg:px-20 lg:py-14 md:flex-row">
                 <div class="w-5/6 mb-10 lg:max-w-lg lg:w-full md:w-1/2 md:mb-0">
                     <img class="object-cover object-center shadow-lg rounded-lg" alt="hero" src="/images/photo1.png">
                 </div>
@@ -124,7 +165,7 @@
                     <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
                         Renforcer la langue allemande en permettant sa pratique en dehors du cercle familial</h2>
-                    <p class="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">l’EFA
+                    <p class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">l’EFA
                         organise des rencontres familiaux pour donner l’occasion aux adultes de discuter et de
                         s’échanger
                         quelques conseils.</p>
@@ -165,7 +206,7 @@
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
                         Soutenir les parents dans leur désir de communiquer dans leur langue maternelle
                     </h2>
-                    <p class="mb-8 text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
+                    <p class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
                         Les parents profitent eux aussi des échanges avec d’autres parents.
                         De nombreuses amitiés sont ainsi nées.
                     </p>
@@ -201,7 +242,7 @@
                     </p>
                 </div>
                 <div class="w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-cente shadow-lg rounded-lg " alt="hero" src="/images/photo2.png">
+                    <img class="object-cover object-center shadow-lg rounded-lg " alt="hero" src="/images/photo2.png">
                 </div>
             </div>
         </section>
@@ -212,14 +253,14 @@
 
         <section id="contact" class="text-gray-700 body-font">
             <div class="container px-8 pt-10 mx-auto lg:px-4">
-                <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
+                <h2 class="text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                     {{ __('contact-title') }}</h2>
-                <div class="flex flex-wrap mt-10 mb-6">
+                <div class="flex flex-wrap mt-8">
                     <div
                         class="flex flex-col w-full p-8 mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
                         <div>
-                            <h3 class="mb-5 text-lg font-black tracking-widest text-blue-800 uppercase title-font">
-                                Ecrivez nous :</h3>
+                            <h3 class="mb-5 text-2xl font-bold tracking-tighter text-blue-800 title-font">
+                                Ecrivez nous</h3>
                             <form action="/messages" method="POST" class="inline-block">
                                 @csrf
 
@@ -310,10 +351,10 @@
                     </div>
 
                     <div class="flex flex-col w-full mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
-                        <div class="container flex flex-col flex-wrap px-5 py-6 mx-auto sm:flex-row">
+                        <div class="container flex flex-col flex-wrap px-5 py-8 mx-auto sm:flex-row">
                             <div class="flex flex-wrap items-center justify-center mx-auto text-base">
-                                <h3 class="mb-5 text-lg font-black tracking-widest text-blue-800 uppercase title-font">
-                                    Passez nous voir :</h3>
+                                <h3 class="mb-5 text-2xl font-bold tracking-tighter text-blue-800 title-font">
+                                    Passez nous voir</h3>
                                 <address class="w-70 items-center p-6 mb-10 justify-center text-sm text-left rounded-lg shadow-lg tracking-wide  text-gray-600">
                                     <div>
                                     <svg class="w-4 h-4 inline text-blue-700 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -392,6 +433,15 @@
                 // Count the current number of characters
                 counterEle.innerHTML = maxLength - target.value.length;
             });
+        </script>
+
+        <script>
+            const buttonDismiss = document.getElementById('dismiss');
+            const bannerRGPD = document.getElementById('bannerRGPD');
+
+            buttonDismiss.addEventListener('click', function(e) {
+                bannerRGPD.classList.add("hidden");
+            })
         </script>
     </div>
 </body>
