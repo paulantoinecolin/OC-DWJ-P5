@@ -30,18 +30,17 @@
                     class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('contact') }}</a>
             </nav>
             <div class="flex justify-center">
-            <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                class="p-1  hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                <img class="w-6 h-6 rounded-full "
-                    src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
-                    alt="">
-            </a>
-            <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
-                class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class="w-8 h-8 rounded-full"
-                    src=" /images/logo-facebook.png" alt="">
-            </a>
-        </div>
+                <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
+                    class="p-1  hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <img class="w-6 h-6 rounded-full "
+                        src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
+                        alt="">
+                </a>
+                <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
+                    class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
+                <img class=" w-8 h-8 rounded-full" src=" /images/logo-facebook.png" alt="">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -272,6 +271,11 @@
                                 Ecrivez nous</h3>
                             <form action="/messages" method="POST" class="inline-block">
                                 @csrf
+                                @if(session()->has('message'))
+                                    <div class="bg-green-200 text-green-900 rounded-lg my-2 p-2">
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
 
                                 {{-- Name --}}
                                 <div class="relative ">

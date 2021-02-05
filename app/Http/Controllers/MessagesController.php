@@ -27,7 +27,7 @@ class MessagesController extends Controller
             'newsletter' => 'sometimes',
             ]));
         
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Merci pour votre message !');
     }
 
     public function destroy(Message $message)
