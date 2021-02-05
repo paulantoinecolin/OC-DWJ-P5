@@ -15,79 +15,85 @@
     {{-- MENU --}}
 
     <header id="home" class="sticky top-0 text-blue-100 bg-blue-900 body-font">
-        <div class="container flex flex-col flex-wrap py-2 mx-auto md:items-center md:flex-row">
-            <a href="#home" class="flex items-center w-40 mb-4 mr-40 font-medium text-gray-800 title-font md:mb-0">
-                <img src="/images/logo-efa.jpg" alt="logo-efa" class="w-20 md:w-32 lg:w-36">
+        <div class="container flex flex-col flex-wrap items-center py-2 mx-auto md:flex-row md:justify-between">
+            <a href="#home" class="flex items-center mb-4 font-medium text-gray-800 title-font md:mb-0 lg:w-40">
+                <img src="/images/logo-efa.jpg" alt="logo-efa" class="rounded w-24 md:w-32 lg:w-36">
             </a>
-            <nav class="flex flex-wrap items-center justify-center ml-20 text-base">
+            <nav class="flex flex-col items-center text-base lg:flex-row lg:space-x-5">
                 <a href="#home"
-                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('home') }}</a>
+                    class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('home') }}</a>
                 <a href="#kidsclub"
-                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('kidsclub') }}</a>
+                    class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('kidsclub') }}</a>
                 <a href="#events"
-                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('events') }}</a>
+                    class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('events') }}</a>
                 <a href="#contact"
-                    class="mr-5 text-lg  font-bold text-blue-200 rounded-xl hover:text-white">{{ __('contact') }}</a>
+                    class="text-sm font-bold text-blue-200 rounded-xl hover:text-white lg:text-lg">{{ __('contact') }}</a>
             </nav>
+            <div class="flex justify-center">
             <a href="{{ app()->getLocale() == 'fr' ? route('german') : route('french') }}"
-                class="p-1 ml-auto rounded-full ring-1 ring-offset-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                class="p-1  hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                 <img class="w-6 h-6 rounded-full "
                     src="{{ app()->getLocale() == 'fr' ? '/images/france.png' : '/images/germany.png' }}"
                     alt="">
             </a>
             <a href="https://www.facebook.com/eveilfrancoallemand" target="blank"
-                class="flex ml-3 rounded-full ring-1 ring-offset-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
-                <img class=" w-8 h-8 rounded-full "
+                class="flex ml-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"">
+                <img class="w-8 h-8 rounded-full"
                     src=" /images/logo-facebook.png" alt="">
             </a>
         </div>
+        </div>
     </header>
 
-{{-- RGPD Banner --}}
-<div id="bannerRGPD" class="bg-blue-900">
-    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between flex-wrap">
-        <div class="w-0 flex-1 flex items-center">
-          <span class="flex p-2 rounded-lg bg-blue-500">
-            <!-- Heroicon name: outline/speakerphone -->
-            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-            </svg>
-          </span>
-          <p class="ml-3 font-medium text-white truncate">
-            <span class="md:hidden">
-              Conditions d'utilisation des emails
-            </span>
-            <span class="hidden md:inline">
-              Merci de prendre un instant pour lire nos conditions d'utililisation de collecte des emails
-            </span>
-          </p>
+    {{-- RGPD Banner --}}
+    <div id="bannerRGPD" class="bg-blue-900">
+        <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between  flex-wrap md:ml-0 lg:ml-20">
+                <div class="w-0 flex-1 flex justify-center items-center">
+                    <span class="flex p-2 rounded-lg bg-blue-500">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                        </svg>
+                    </span>
+                    <p class="ml-3 font-xs text-white truncate">
+                        <span class="md:hidden">
+                            Conditions d'utilisation des données
+                        </span>
+                        <span class="hidden md:inline">
+                            Merci de lire nos conditions d'utililisation concernant l'utilisation de vos données
+                        </span>
+                    </p>
+                </div>
+                <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                    <a href="#" id="accept"
+                        class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-blue-800 bg-white hover:bg-indigo-50">
+                        Accepter
+                    </a>
+                </div>
+                <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+                    <button id="dismiss" type="button"
+                        class="-mr-1 flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+                        <span class="sr-only">Dismiss</span>
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-          <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-blue-800 bg-white hover:bg-indigo-50">
-            Accepter
-          </a>
-        </div>
-        <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-          <button id="dismiss" type="button" class="-mr-1 flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
-            <span class="sr-only">Dismiss</span>
-            <!-- Heroicon name: outline/x -->
-            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
     </div>
-  </div>
-  
+
 
     <div class="container w-full p-15 m-4 mx-auto my-16 text-center bg-white h-96 rounded-xl">
-    
-        
-    
-    {{-- HEADER --}}
-    
+
+
+
+        {{-- HEADER --}}
+
         <section class="text-gray-700 body-font">
             <div class="container px-8 mx-auto py-2 lg:px-4">
                 <div class="flex flex-col w-full mb-12 text-left lg:text-center">
@@ -165,7 +171,9 @@
                     <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
                         Renforcer la langue allemande en permettant sa pratique en dehors du cercle familial</h2>
-                    <p class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">l’EFA
+                    <p
+                        class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
+                        l’EFA
                         organise des rencontres familiaux pour donner l’occasion aux adultes de discuter et de
                         s’échanger
                         quelques conseils.</p>
@@ -206,7 +214,8 @@
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
                         Soutenir les parents dans leur désir de communiquer dans leur langue maternelle
                     </h2>
-                    <p class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
+                    <p
+                        class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
                         Les parents profitent eux aussi des échanges avec d’autres parents.
                         De nombreuses amitiés sont ainsi nées.
                     </p>
@@ -326,7 +335,8 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg></a>
-                                    <span class="mt-2 text-xs font-medium leading-normal">Téléchargez le bulletin d'adhésion</span>
+                                <span class="mt-2 text-xs font-medium leading-normal">Téléchargez le bulletin
+                                    d'adhésion</span>
                             </label>
                         </div>
                         <div>
@@ -340,54 +350,69 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                                     </svg>
-                                    <span class="mt-2 text-xs font-medium leading-normal">Renvoyez le bulletin d'adhésion rempli</span>
+                                    <span class="mt-2 text-xs font-medium leading-normal">Renvoyez le bulletin
+                                        d'adhésion rempli</span>
                                     <input type='file' name="pdf" class="hidden" />
                                 </label>
-                                    <button
-                                        class="mt-4 px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
-                                        value="Save">Envoyer votre fichier</button>
+                                <button
+                                    class="mt-4 px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
+                                    value="Save">Envoyer votre fichier</button>
                             </form>
                         </div>
                     </div>
 
-                    <div class="flex flex-col w-full mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
+                    <div
+                        class="flex flex-col w-full mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
                         <div class="container flex flex-col flex-wrap px-5 py-8 mx-auto sm:flex-row">
                             <div class="flex flex-wrap items-center justify-center mx-auto text-base">
                                 <h3 class="mb-5 text-2xl font-bold tracking-tighter text-blue-800 title-font">
                                     Passez nous voir</h3>
-                                <address class="w-70 items-center p-6 mb-10 justify-center text-sm text-left rounded-lg shadow-lg tracking-wide  text-gray-600">
+                                <address
+                                    class="w-70 items-center p-6 mb-10 justify-center text-sm text-left rounded-lg shadow-lg tracking-wide  text-gray-600">
                                     <div>
-                                    <svg class="w-4 h-4 inline text-blue-700 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                      </svg>
-                                      <label class="text-base not-italic">
-                                        Stephanie Zillmer - Présidente      
-                                      </label>
+                                        <svg class="w-4 h-4 inline text-blue-700 xmlns=" http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                        <label class="text-base not-italic">
+                                            Stephanie Zillmer - Présidente
+                                        </label>
                                     </div>
                                     <div>
-                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>
                                         <label class="text-base not-italic">07 51 89 89 89</label>
                                     </div>
                                     <div>
-                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                                          </svg>
-                                        <a href="mailto:contact@efa-34.org" class="text-base not-italic hover:text-blue-700">contact@efa-34.org</a><br>
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                                        </svg>
+                                        <a href="mailto:contact@efa-34.org"
+                                            class="text-base not-italic hover:text-blue-700">contact@efa-34.org</a><br>
                                     </div>
                                     <div>
-                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                          </svg>
-                                        <a href="https://goo.gl/maps/46ES9pgGrdYFhzvr5" target="blank" class="text-base not-italic hover:text-blue-700">
-                                        14 rue de l'Améthyste<span class="inline-block ml-5">34070 Montpellier</span></a>
+                                        <svg class="w-4 h-4 inline text-blue-700" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <a href="https://goo.gl/maps/46ES9pgGrdYFhzvr5" target="blank"
+                                            class="text-base not-italic hover:text-blue-700">
+                                            14 rue de l'Améthyste<span class="inline-block ml-5">34070
+                                                Montpellier</span></a>
                                     </div>
                                 </address>
                             </div>
-                                <div id="map" style="width: 100%; height:400px;" class="mt-24 rounded-lg shadow-lg">
-                                </div>
+                            <div id="map" style="width: 100%; height:400px;" class="mt-24 rounded-lg shadow-lg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -433,15 +458,22 @@
                 // Count the current number of characters
                 counterEle.innerHTML = maxLength - target.value.length;
             });
+
         </script>
 
         <script>
             const buttonDismiss = document.getElementById('dismiss');
+            const buttonAccept = document.getElementById('accept');
             const bannerRGPD = document.getElementById('bannerRGPD');
 
-            buttonDismiss.addEventListener('click', function(e) {
+            buttonDismiss.addEventListener('click', function (e) {
                 bannerRGPD.classList.add("hidden");
             })
+
+            buttonAccept.addEventListener('click', function (e) {
+                bannerRGPD.classList.add("hidden");
+            })
+
         </script>
     </div>
 </body>
