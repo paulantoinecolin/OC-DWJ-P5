@@ -361,10 +361,12 @@
                                     </svg>
                                     <span class="mt-2 text-xs font-medium leading-normal">Renvoyez le bulletin
                                         d'adhésion rempli</span>
-                                    <input type='file' name="pdf" class="hidden" />
+                                    <input id="uploadFile" type="file" name="pdf" class="hidden" />
                                 </label>
+                                <div id="chosenFile" class=""></div>
                                 <button
-                                    class="mt-4 px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
+                                    id="submitFile"
+                                    class="disabled:opacity-50 mt-4 px-12 py-2 font-semibold text-white rounded-lg shadow-xl transition duration-500 ease-in-out transform bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:ring focus:outline-none"
                                     value="Save">Envoyer votre fichier</button>
                             </form>
                         </div>
@@ -437,6 +439,7 @@
         </footer>
 
         <script>
+            // Mapbox
             mapboxgl.accessToken =
                 'pk.eyJ1IjoicGF1bGFudG9pbmVjb2xpbiIsImEiOiJjazBqYmdiYWIwOGFjM2huMTR0enVpejk1In0.DmB49AgRVNtdlx9L_HKZlQ';
             var map = new mapboxgl.Map({
@@ -451,10 +454,10 @@
             var marker = new mapboxgl.Marker()
                 .setLngLat([3.89180, 43.596204])
                 .addTo(map);
-
         </script>
 
         <script>
+            // Form Feedback
             const messageEle = document.getElementById('message');
             const counterEle = document.getElementById('counter');
 
@@ -467,10 +470,10 @@
                 // Count the current number of characters
                 counterEle.innerHTML = maxLength - target.value.length;
             });
-
         </script>
 
         <script>
+            // Banner RGPD
             const buttonDismiss = document.getElementById('dismiss');
             const buttonAccept = document.getElementById('accept');
             const bannerRGPD = document.getElementById('bannerRGPD');
@@ -482,8 +485,24 @@
             buttonAccept.addEventListener('click', function (e) {
                 bannerRGPD.classList.add("hidden");
             })
-
         </script>
+        
+        <script>
+            let submitDocument = document.getElementById('uploadFile');
+            let submitButton = document.getElementById('submitFile');
+            let chosenFile = document.getElementById('chosenFile');
+
+            submitButton.disabled = true;
+
+            submitDocument.addEventListener("change", function() {
+              if (submitDocument.files.length > 0) {
+                let file = submitDocument.files[0];
+                submitButton.disabled = false;
+                chosenFile.innerHTML += file.name;
+                chosenFile.className += "bg-gray-100 text-gray-700 rounded-lg my-2 p-2";
+              }
+            });
+          </script>
     </div>
 </body>
 
