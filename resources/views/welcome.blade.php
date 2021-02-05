@@ -463,11 +463,20 @@
 
             buttonDismiss.addEventListener('click', function (e) {
                 bannerRGPD.classList.add("hidden");
+                localStorage.setItem('show', 'false');
             })
 
             buttonAccept.addEventListener('click', function (e) {
                 bannerRGPD.classList.add("hidden");
+                localStorage.setItem('show', 'false');
             })
+
+            window.onload = function () {
+                let show = localStorage.getItem('show');
+                if (show === 'false') {
+                    bannerRGPD.className = "hidden";;
+                }
+            }
 
         </script>
 
