@@ -104,7 +104,7 @@
 
         {{-- CLUBS GRID --}}
         <section id="kidsclub" class="text-gray-700 body-font mt-10">
-            <div class="container  mx-auto lg:px-4">
+            <div class="container pt-4 mx-auto lg:px-4">
                 <div id="kids-clubs" class="mt-10"></div>
                 <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                     {{ __('club-title') }}</h2>
@@ -150,7 +150,7 @@
         </section>
 
         {{-- RIGHT --}}
-        <section id="events" class="text-gray-700 body-font mt-24">
+        <section id="events" class="text-gray-700 pt-10  body-font mt-24">
             <h2 class="mb-1 text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                 {{ __('events-title') }}</h2>
             <div
@@ -162,34 +162,33 @@
                     class="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 md:items-start md:text-left">
                     <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
-                        Renforcer la langue allemande en permettant sa pratique en dehors du cercle familial</h2>
+                        {{ __('events1-subtitle') }}
+                        </h2>
                     <p
                         class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
-                        l’EFA
-                        organise des rencontres familiaux pour donner l’occasion aux adultes de discuter et de
-                        s’échanger
-                        quelques conseils.</p>
+                        {{ __('events1-text') }}
+                        </p>
                     <p class="flex items-center mb-2 text-gray-600"><span
                             class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" /></svg>
-                        </span>Carnaval</p>
+                        </span>{{ __('events1-list1') }}</p>
                     <p class="flex items-center mb-2 text-gray-600"><span
                             class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
-                            </svg></span>Brunch de Pâques</p>
+                            </svg></span>{{ __('events1-list2') }}</p>
                     <p class="flex items-center mb-6 text-gray-600"><span
                             class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
                             <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
-                            </svg></span>Fête d’été</p>
+                            </svg></span>{{ __('events1-list3') }}</p>
                 </div>
             </div>
         </section>
@@ -202,12 +201,11 @@
                     class="flex flex-col items-center w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 lg:mr-20 md:items-start md:text-left md:mb-0 lg:text-center">
                     <h2
                         class="mb-8 text-2xl font-bold tracking-tighter text-center text-blue-800 lg:text-left lg:text-2xl title-font">
-                        Soutenir les parents dans leur désir de communiquer dans leur langue maternelle
+                        {{ __('events2-subtitle') }}
                     </h2>
                     <p
                         class="mb-8 font-bold text-base leading-relaxed text-center text-gray-700 lg:text-left lg:text-1xl">
-                        Les parents profitent eux aussi des échanges avec d’autres parents.
-                        De nombreuses amitiés sont ainsi nées.
+                        {{ __('events2-text') }}
                     </p>
                     <p class="flex items-center mb-2 text-gray-600"><span
                             class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -217,7 +215,7 @@
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
                             </svg>
                         </span>
-                        Fabrication de lanternes
+                        {{ __('events2-list1') }}
                     </p>
                     <p class="flex items-center mb-2 text-gray-600">
                         <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -227,7 +225,7 @@
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
                             </svg>
                         </span>
-                        Défilé aux lanternes pour les enfants
+                        {{ __('events2-list2') }}
                     </p>
                     <p class="flex items-center mb-6 text-gray-600">
                         <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -237,7 +235,7 @@
                                 <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" />
                             </svg>
                         </span>
-                        Fabrication de décorations de Noël
+                        {{ __('events2-list3') }}
                     </p>
                 </div>
                 <div class="w-5/6 lg:max-w-lg lg:w-full md:w-1/2">
@@ -248,7 +246,7 @@
 
         {{-- FORM --}}
         <section id="contact" class="text-gray-700 body-font">
-            <div class="container px-8 pt-10 mx-auto lg:px-4">
+            <div class="container px-8 pt-10 mt-24 mx-auto lg:px-4">
                 <h2 class="text-xl font-black tracking-widest text-blue-800 uppercase title-font lg:text-2xl">
                     {{ __('contact-title') }}</h2>
                 <div class="flex flex-wrap mt-8">
@@ -316,17 +314,18 @@
                             </form>
                         </div>
                         <div class="flex flex-col flex-initial mt-10 items-center">
+                            <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>
                             <label
                                 class="w-64 flex flex-col items-center mb-10 px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:shadow-xl hover:text-black">
-                                <a href={{ url('/public/pdf/bulletin_adhesion.pdf') }}>
+                                
                                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                    </svg></a>
+                                    </svg>
                                 <span class="mt-2 text-xs font-medium leading-normal">Téléchargez le bulletin
                                     d'adhésion</span>
-                            </label>
+                            </label></a>
                         </div>
                         <div>
                             <form action="{{ route('membership') }}" method="POST"
@@ -420,85 +419,10 @@
             </div>
         </footer>
 
-        <script>
-            // Mapbox
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoicGF1bGFudG9pbmVjb2xpbiIsImEiOiJjazBqYmdiYWIwOGFjM2huMTR0enVpejk1In0.DmB49AgRVNtdlx9L_HKZlQ';
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                center: [3.891701, 43.596278], // starting position [lng, lat]
-                zoom: 16 // starting zoom
-            });
-
-            map.addControl(new mapboxgl.NavigationControl());
-
-            var marker = new mapboxgl.Marker()
-                .setLngLat([3.89180, 43.596204])
-                .addTo(map);
-
-        </script>
-
-        <script>
-            // Form Feedback
-            const messageEle = document.getElementById('message');
-            const counterEle = document.getElementById('counter');
-
-            messageEle.addEventListener('input', function (e) {
-                const target = e.target;
-
-                // Get the `maxlength` attribute
-                const maxLength = target.getAttribute('maxlength');
-
-                // Count the current number of characters
-                counterEle.innerHTML = maxLength - target.value.length;
-            });
-
-        </script>
-
-        <script>
-            // Banner RGPD
-            const buttonDismiss = document.getElementById('dismiss');
-            const buttonAccept = document.getElementById('accept');
-            const bannerRGPD = document.getElementById('bannerRGPD');
-
-            buttonDismiss.addEventListener('click', function (e) {
-                bannerRGPD.classList.add("hidden");
-                localStorage.setItem('show', 'false');
-            })
-
-            buttonAccept.addEventListener('click', function (e) {
-                bannerRGPD.classList.add("hidden");
-                localStorage.setItem('show', 'false');
-            })
-
-            window.onload = function () {
-                let show = localStorage.getItem('show');
-                if (show === 'false') {
-                    bannerRGPD.className = "hidden";;
-                }
-            }
-
-        </script>
-
-        <script>
-            let submitDocument = document.getElementById('uploadFile');
-            let submitButton = document.getElementById('submitFile');
-            let chosenFile = document.getElementById('chosenFile');
-
-            submitButton.disabled = true;
-
-            submitDocument.addEventListener("change", function () {
-                if (submitDocument.files.length > 0) {
-                    let file = submitDocument.files[0];
-                    submitButton.disabled = false;
-                    submitButton.className + "opacity-100";
-                    chosenFile.innerHTML += file.name;
-                    chosenFile.className += "bg-gray-100 text-gray-700 rounded-lg my-2 p-2";
-                }
-            });
-
-        </script>
+        <script src="{{ asset('js/mapbox.js') }}"></script>
+        <script src="{{ asset('js/countTool.js') }}"></script>
+        <script src="{{ asset('js/bannerRGPD.js') }}"></script>
+        <script src="{{ asset('js/uploadBtn.js') }}"></script>
     </div>
 </body>
 

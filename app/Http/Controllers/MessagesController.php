@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use App\Models\Message;
 
 class MessagesController extends Controller
@@ -27,7 +29,7 @@ class MessagesController extends Controller
             'newsletter' => 'sometimes',
             ]));
         
-        return redirect()->back()->with('message', 'Merci pour votre message !');
+        return Redirect::to(URL::previous() . "#contact")->with('message', 'Merci pour votre message !');
     }
 
     public function destroy(Message $message)

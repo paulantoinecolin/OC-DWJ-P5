@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 class ActionsController extends Controller
 {
     public function download($filename = '')
@@ -13,8 +14,6 @@ class ActionsController extends Controller
             'Content-type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename=' . $filename,
         );
-
-        // dd($file_path);
 
         if (file_exists($file_path)) {
             // Send Download
@@ -29,6 +28,6 @@ class ActionsController extends Controller
     {
         $request->file('pdf')->store('/public/membership/');
 
-        return redirect()->back()->with('feedback', 'Votre fichier a bien été envoyé !');
+        return Redirect::to(URL::previous() . "#contact")->with('feedback', 'Votre fichier a bien été envoyé !');
     }
 }
